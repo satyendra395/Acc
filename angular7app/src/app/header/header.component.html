@@ -1,0 +1,9 @@
+<div class="header">
+  <span class="main_header" *ngFor="let icons of icon">
+    <i [class]="icons.icon"></i>
+    <span>{{icons.text}}</span>
+  </span>
+  <input id="filter" type="text" placeholder="Search" />
+  <i id="filtersubmit" class="fa fa-search"></i>
+  
+</div>

@@ -1,0 +1,59 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body class="main-container">
+    <!--  -->
+    <app-header></app-header>
+    <div class="example-container">
+        <h2>To do</h2>
+        
+        <div
+            cdkDropList
+            #todoList="cdkDropList"
+            [cdkDropListData]="todo"
+            [cdkDropListConnectedTo]="[doneList, doingList]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+        </div>
+    </div>
+    <div class="example-container">
+        <h2>Doing</h2>
+        <div
+            cdkDropList
+            #doingList="cdkDropList"
+            [cdkDropListData]="doing"
+            [cdkDropListConnectedTo]="[doneList , todoList]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of doing" cdkDrag>{{item}}</div>
+        </div>
+        
+    </div>          
+    <div class="example-container">
+        <h2>Done</h2>
+    
+        <div
+            cdkDropList
+            #doneList="cdkDropList"
+            [cdkDropListData]="done"
+            [cdkDropListConnectedTo]="[todoList , doingList]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+        </div>
+    </div> 
+    
+     <div>
+        <app-maplocation></app-maplocation>    
+    </div>           
+</body>
+</html>
+
+<router-outlet></router-outlet>
