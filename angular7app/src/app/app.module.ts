@@ -8,12 +8,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule} from '@angular/cdk/drag-drop';
 import { HeaderComponent } from './header/header.component';
 import { MaplocationComponent } from './maplocation/maplocation.component';
+import { TemplatedrivenComponentComponent } from './templatedriven-component/templatedriven-component.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MaplocationComponent
+    MaplocationComponent,
+    TemplatedrivenComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import { MaplocationComponent } from './maplocation/maplocation.component';
     HttpModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    DragDropModule
+    DragDropModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
